@@ -12,12 +12,50 @@ public class Processor {
     /**
      * Constructor
      */
-    public Processor(){
+    public Processor(Display d){
+        this.mDisplay = d;
+        this.mMemory = new Memory();
+    }
+
+    /**
+     * processing the button pressed
+     *
+     * @param value
+     */
+    public void process(String value){
+        this.mDisplay.appendText(value);
+
+        if(this.isDigit(value)){
+            this.addDigitToMemory(value);
+        }
+    }
+
+    private void addDigitToMemory(String digit){
 
     }
 
-    public void compute(){
+    /**
+     * TODO
+     * @param value
+     * @return
+     */
+    private boolean isDigit(String value){
+        return false;
+    }
 
+    /**
+     * TODO
+     * @param value
+     * @return
+     */
+    private boolean isOperator(String value){
+        return false;
+    }
+
+    private void calculate(){
+        String left = this.mMemory.getLeftOperand();
+        String right = this.mMemory.getRightOperand();
+        String operator = this.mMemory.getOperator();
     }
 
 }

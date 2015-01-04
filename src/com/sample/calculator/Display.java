@@ -5,11 +5,15 @@ import javax.swing.*;
 /**
  * Created by Arnaud on 1/4/2015.
  */
-public class Display {
+public class Display extends JTextField {
 
-    private JTextField mUIDisplay;
+    public Display() {
+        this.setEditable(false);
+        this.setText("0");
+    }
 
-    public Display(JTextField mUIDisplay) {
-        this.mUIDisplay = mUIDisplay;
+    public void appendText(String text){
+        String buffer = this.getText();
+        this.setText(buffer + text);
     }
 }
